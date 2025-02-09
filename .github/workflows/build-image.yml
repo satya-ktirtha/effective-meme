@@ -15,9 +15,13 @@ jobs:
         with:
           repository: 'satya-ktirtha/effective-meme'
           ref: 'master'
+      - name: Login to GitHub Container Reg
+        uses: docker/login-action@v1
+          with: 
+            registry: 'ghcr.io'
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build docker image
-        run: docker build -t test:1.0.0 .
-      - name: Save docker image to be used for production
-        run: mkdir -p build && docker save -o build/output test:1.0.0
-      - name: Push to master branch
-        run: git config --global user.name "satya-ktirtha" && git config --global user.email "satya.ktirtha@gmail.com" && git add * && git commit --author="Satya Kripa Tirtha <satya.ktirtha@gmail.com>" -m "Created image" && git push
+        run: docker build -t ghcr.io/satya-ktirtha/test:latest .
+      - name: Pushing to docker registry
+        run: docker push ghcr.io/satya-ktirtha/test:latest
