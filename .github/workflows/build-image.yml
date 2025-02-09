@@ -12,4 +12,4 @@ jobs:
       - name: Build docker image
         run: docker build -t test:1.0.0 .
       - name: Save docker image to be used for production
-        run: docker save -o build/output test:1.0.0
+        run: mkdir -p build && docker save -o build/output test:1.0.0
