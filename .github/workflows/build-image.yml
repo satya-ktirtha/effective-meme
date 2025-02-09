@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out master repo
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
+        with:
+          repository: 'master'
       - name: Build docker image
         run: docker build -t test:1.0.0 .
       - name: Save docker image to be used for production
