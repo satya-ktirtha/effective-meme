@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest, windows-latest
+    runs-on: windows-latest
     steps:
       - name: Check out master repo
         uses: actions/checkout@master
