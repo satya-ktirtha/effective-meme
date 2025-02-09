@@ -11,7 +11,8 @@ jobs:
       - name: Check out master repo
         uses: actions/checkout@v4
         with:
-          repository: 'master'
+          repository: 'satya-ktirtha/effective-meme'
+          ref: 'master'
       - name: Build docker image
         run: docker build -t test:1.0.0 .
       - name: Save docker image to be used for production
