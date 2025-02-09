@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: send
+      contents: read
       packages: write
     steps:
       - name: Check out master repo
