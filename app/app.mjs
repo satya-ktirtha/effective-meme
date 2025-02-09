@@ -4,6 +4,7 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 
+//test
 app.get('/api', (req, res) => {
     res.send({
         status: 0
