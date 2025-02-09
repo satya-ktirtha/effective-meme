@@ -2,7 +2,7 @@
 
 ARG NODE_VERSION=23.7.0
 
-FROM node:latest-alpine3.20@sha256:3ac002b133fd3737c44b66f0d023f5d75c7a1ddec71954fa06486aed6aead888
+FROM node:${NODE_VERSION}-alpine3.20@sha256:3ac002b133fd3737c44b66f0d023f5d75c7a1ddec71954fa06486aed6aead888
 
 WORKDIR /app
 
