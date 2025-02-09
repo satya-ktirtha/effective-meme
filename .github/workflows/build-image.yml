@@ -28,3 +28,4 @@ jobs:
         run: docker build -t ghcr.io/satya-ktirtha/test:latest .
       - name: Pushing to docker registry
         run: docker push ghcr.io/satya-ktirtha/test:latest
+
