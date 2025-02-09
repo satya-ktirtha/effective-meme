@@ -13,3 +13,5 @@ jobs:
         run: docker build -t test:1.0.0 .
       - name: Save docker image to be used for production
         run: mkdir -p build && docker save -o build/output test:1.0.0
+      - name: Push to master branch
+        run: git add * && git commit -m "Created image" && git push
