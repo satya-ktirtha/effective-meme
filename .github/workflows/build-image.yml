@@ -17,10 +17,10 @@ jobs:
           ref: 'master'
       - name: Login to GitHub Container Reg
         uses: docker/login-action@v1
-          with: 
-            registry: 'ghcr.io'
-            username: ${{ github.actor }}
-            password: ${{ secrets.GITHUB_TOKEN }}
+        with: 
+          registry: 'ghcr.io'
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build docker image
         run: docker build -t ghcr.io/satya-ktirtha/test:latest .
       - name: Pushing to docker registry
