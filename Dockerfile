@@ -12,6 +12,8 @@ WORKDIR /app
 #    --mount=type=cache,target=/root/.npm \
 #    npm ci --omit=dev
 
+LABEL org.opencontainers.image.source="https://github.com/satya-ktirtha/effective-meme"
+
 COPY /app/package.json .
 
 RUN npm install
