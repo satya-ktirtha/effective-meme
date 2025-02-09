@@ -9,6 +9,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: send
+      packages: write
     steps:
       - name: Check out master repo
         uses: actions/checkout@v4
